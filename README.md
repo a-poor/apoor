@@ -2,6 +2,6 @@
 
 _created by Austin Poor_
 
-A small personal Python package with reusable code.
+A small personal package written in Python with reusable code. 
 
 

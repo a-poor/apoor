@@ -1,7 +1,11 @@
 # apoor
 
+![PyPI - Status](https://img.shields.io/pypi/status/apoor)
+![PyPI](https://img.shields.io/pypi/v/apoor)
 [![Build Status](https://travis-ci.org/a-poor/apoor.svg?branch=master)](https://travis-ci.org/a-poor/apoor) 
 [![codecov](https://codecov.io/gh/a-poor/apoor/branch/master/graph/badge.svg)](https://codecov.io/gh/a-poor/apoor)
+![PyPI - License](https://img.shields.io/pypi/l/apoor)
+
 
 _created by Austin Poor_
 

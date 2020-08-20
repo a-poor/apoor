@@ -3,7 +3,7 @@ apoor.__init__.py
 created by Austin Poor
 """
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 
 def make_scale(dmin,dmax,rmin,rmax,clamp=False):

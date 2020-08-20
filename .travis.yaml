@@ -5,6 +5,3 @@ install:
     - pip install --user -r tests/requirements.txt
 script:
     - pytest
-branches:
-    only:
-    - master

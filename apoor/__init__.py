@@ -19,8 +19,7 @@ def set_seed(n:int):
     """Sets numpy's random seed.
 
     Args:
-        n:
-            The value used to set numpy's random seed.
+        n (int): The value used to set numpy's random seed.
     """
     np.random.seed(n)
 
@@ -31,16 +30,11 @@ def make_scale(dmin:float,dmax:float,rmin:float,rmax:float,clamp:bool=False):
     Creates a scale function to map a number from a domain to a range.
 
     Args:
-        dmin:
-            Domain's start value
-        dmax: 
-            Domain's end value
-        rmin: 
-            Range's start value
-        rmax:
-            Range's end value
-        clamp: 
-            if the result is outside the range, return clamped value (default: False)
+        dmin (float): Domain's start value
+        dmax (float): Domain's end value
+        rmin (float): Range's start value
+        rmax (float): Range's end value
+        clamp (bool): If the result is outside the range, return clamped value (default: False)
     Returns:
         A scale function taking one numeric argument and returns the value mapped from the domain to the range (and clamped if `clamp` flag is set).
 

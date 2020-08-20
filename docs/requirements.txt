@@ -1,1 +1,3 @@
+apoor
+sphinxcontrib-napoleon
 Flask-Sphinx-Themes

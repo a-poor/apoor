@@ -1,5 +1,8 @@
 # apoor
 
+[![Build Status](https://travis-ci.org/a-poor/apoor.svg?branch=master)](https://travis-ci.org/a-poor/apoor) 
+[![codecov](https://codecov.io/gh/a-poor/apoor/branch/master/graph/badge.svg)](https://codecov.io/gh/a-poor/apoor)
+
 _created by Austin Poor_
 
 A small personal package written in Python with reusable code. 

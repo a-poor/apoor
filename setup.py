@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setuptools.setup(
     name="apoor",
-    version="0.0.1",
+    version="1.0.0",
     author="Austin Poor",
     author_email="a-poor@users.noreply.github.com",
     description="A small personal package written in Python with reusable code",

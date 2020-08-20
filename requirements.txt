@@ -2,3 +2,4 @@ apoor
 pytest
 pytest-cov
 codecov
+pandas

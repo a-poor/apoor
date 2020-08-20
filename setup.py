@@ -23,7 +23,7 @@ setuptools.setup(
         "Development Status :: 3 - Alpha"
     ],
     install_requires=[
-        "numpy"
+        "numpy",
         "pandas",
       ],
     python_requires=">=3.6",

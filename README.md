@@ -4,31 +4,22 @@
 ![PyPI](https://img.shields.io/pypi/v/apoor)
 [![Build Status](https://travis-ci.org/a-poor/apoor.svg?branch=master)](https://travis-ci.org/a-poor/apoor) 
 [![codecov](https://codecov.io/gh/a-poor/apoor/branch/master/graph/badge.svg)](https://codecov.io/gh/a-poor/apoor)
+[![Code Coverage](https://scrutinizer-ci.com/g/a-poor/apoor/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/a-poor/apoor/?branch=master)
 ![PyPI - License](https://img.shields.io/pypi/l/apoor)
+[![Documentation Status](https://readthedocs.org/projects/apoor/badge/?version=latest)](https://apoor.readthedocs.io/en/latest/?badge=latest)
 
 
 _created by Austin Poor_
 
-A small personal package written in Python with reusable code. 
+A small personal package created to store code and data I often reuse.
 
-I created this package to store some of the functions I find myself frequently rewriting.
+## Links
+
+* PyPi Package: https://pypi.org/project/apoor/
+* Documentation: https://apoor.readthedocs.io/en/latest/
 
 ## Installation Instructions
 
 ```bash
 $ pip install apoor
 ```
-
-## Functions
-
-The function `make_scale` returns a function to map a number from a domain to a range.
-
-```
->>> import apoor
->>> scale = apoor.make_scale(0,1,0,10)
->>> scale(0.1)
-1.0
->>> scale(0.9)
-9.0
-```
-

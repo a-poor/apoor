@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.1.2",
     author="Austin Poor",
     author_email="a-poor@users.noreply.github.com",
-    description="A small personal package written in Python with reusable code",
+    description="A small personal package created to store code and data I often reuse.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/a-poor/apoor",
@@ -20,7 +20,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
-        "Development Status :: 3 - Alpha"
+        "Development Status :: 4 - Beta"
     ],
     install_requires=[
         "numpy",

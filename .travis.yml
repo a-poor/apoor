@@ -3,6 +3,9 @@ python:
 - '3.8'
 - '3.7'
 - '3.6'
+branches:
+  only:
+    - master
 install:
 - pip install -e .
 - pip install -r requirements.txt

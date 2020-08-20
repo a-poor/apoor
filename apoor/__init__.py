@@ -1,11 +1,10 @@
-"""
-apoor.__init__.py
-created by Austin Poor
+"""A small personal package created to store code and data I often reuse. 
+
+I'll continue to update it with useful functions that I find myself reusing. The `apoor.data` module has some common datasets and functions for reading them in as pandas DataFrames.
 """
 
 # Version string
 __version__ = "1.1.2"
-
 
 
 # Standard library imports
@@ -20,32 +19,37 @@ from . import data
 
 
 
-def set_seed(n):
-    """
-    Sets numpy's random seed to `n`.
+def set_seed(n:int):
+    """Sets numpy's random seed.
+
+    Args:
+        n:
+            The value used to set numpy's random seed.
     """
     np.random.seed(n)
 
 
-def make_scale(dmin,dmax,rmin,rmax,clamp=False):
-    """
-    Creates a scale function to map a number from
-    a domain to a range.
+def make_scale(dmin:float,dmax:float,rmin:float,rmax:float,clamp:bool=False):
+    """Scale function factory.
+    
+    Creates a scale function to map a number from a domain to a range.
 
-    Inputs:
-        dmin, dmax: numeric start and end values
-            for the domain
-        rmin, rmax: numeric start and end values
-            for the range
-        clamp: if the value is outside the range,
-            return clamped value (default: False)
-    Outputs:
-        scale: function taking one numeric argument
-            and returns the value mapped from the
-            domain to the range (and clamped if
-            `clamp` flag is set).
+    Args:
+        dmin:
+            Domain's start value
+        dmax: 
+            Domain's end value
+        rmin: 
+            Range's start value
+        rmax:
+            Range's end value
+        clamp: 
+            if the result is outside the range, return clamped value (default: False)
+    Returns:
+        A scale function taking one numeric argument and returns the value mapped from the domain to the range (and clamped if `clamp` flag is set).
 
-    Examples:
+        For example:
+        
         >>> s = make_scale(0,1,0,10)
         >>> s(0.1)
         1.0
@@ -68,29 +72,31 @@ def make_scale(dmin,dmax,rmin,rmax,clamp=False):
     return scale
     
 
-def train_test_split(*arrays,test_pct=0.15,val_set=False,val_pct=0.15):
-    """
-    Splits arrays into train, test, and (optionally) 
-    validation sets using the supplied percentages.
+def train_test_split(*arrays,test_pct:float=0.15,val_set:bool=False,val_pct:float=0.15):
+    """Splits arrays into train & test sets.
 
-    Inputs:
+    Splits arrays into train, test, and (optionally) validation sets using the supplied percentages.
+
+    Args:
         *arrays: 
             An arbitrary number of sequences to be split
             into train, test, and (optionally) validation 
             sets. Must have at least one array.
 
-        test_pct: float of the range [0,1] (default `0.15`)
+        test_pct: 
+            Float of the range [0,1]
             Percent of total n values to include in test set.
             
             The train set will have `1.0 - test_pct` pct of
             values (or `1.0 - test_pct - val_pct` pct of values
             if `val_set == True`).
 
-        val_set: bool (default `False`) 
+        val_set:  
             Whether or not to return a validation set,
             in addition to a test set.
 
-        val_pct: float of the range [0,1] (default `0.15`)
+        val_pct: 
+            float of the range [0,1]
             Percent of total n values to include in test set.
             
             Ignored if `val_set == False`.
@@ -98,14 +104,14 @@ def train_test_split(*arrays,test_pct=0.15,val_set=False,val_pct=0.15):
             The train set will have `1.0 - test_pct - val_pct` 
             pct of values.
 
-    Outputs:
+    Returns:
         splits: tuple of numpy arrays
         Input arrays split into train, test, val sets.
         
         If `val_set == False`, `len(splits) == 2 * len(arrays)`,
         or if `val_set == True`, `len(splits) == 3 * len(arrays)`.
 
-    Examples:
+        For example:
         >>> x = np.arange(10)
         >>> train_test_split(x)
         (array([3, 9, 4, 2, 1, 0, 7, 5, 8]), array([6]))

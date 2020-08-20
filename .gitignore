@@ -4,3 +4,7 @@ dist
 build
 *.egg-info
 .pytest_cache
+docs/_build
+docs/_static
+docs/_templates
+.vscode/settings.json

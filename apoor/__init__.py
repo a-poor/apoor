@@ -7,13 +7,9 @@ I'll continue to update it with useful functions that I find myself reusing. The
 __version__ = "1.1.2"
 
 
-# Standard library imports
+
 import itertools as it
-
-# External library imports
 import numpy as np
-
-# Internal module imports
 from . import data
 
 

@@ -14,6 +14,16 @@ from . import data
 
 
 
+def fdir(o=None):
+    """Same as builtin dir() without private attributes.    
+    """
+    if o is None: d = dir()
+    else: d = dir(o)
+    return [a for a in d if a[0] != "_"]
+    
+
+
+
 
 def set_seed(n:int):
     """Sets numpy's random seed.

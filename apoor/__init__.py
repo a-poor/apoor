@@ -159,3 +159,18 @@ def train_test_split(*arrays,test_pct:float=0.15,val_set:bool=False,val_pct:floa
         )
     return tuple(it.chain(*splits))
 
+
+def segments_intersect(l1p1,l1p2,l2p1,l2p2):
+    raise NotImplementedError
+    s1 = {}
+
+
+
+
+
+
+
+
+
+
+

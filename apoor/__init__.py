@@ -4,7 +4,7 @@ I'll continue to update it with useful functions that I find myself reusing. The
 """
 
 # Version string
-__version__ = "1.1.3"
+__version__ = "1.1.4"
 
 
 

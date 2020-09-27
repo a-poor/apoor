@@ -22,7 +22,7 @@ copyright = '2020, Austin Poor'
 author = 'Austin Poor'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1.3'
+release = '1.1.4'
 
 
 # -- General configuration ---------------------------------------------------

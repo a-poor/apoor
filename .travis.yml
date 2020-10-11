@@ -13,10 +13,3 @@ script:
 - pytest --cov=./
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-deploy:
-  provider: pypi
-  username: "__token__"
-  password:
-    secure: jaVIlC+yHw/vIK9PxO1zu6ohfcaEt9yQqRGNRb744N31U7nCzdBRRR6FMyU2Y5Rw2palHrykVrFAHpIRpABCg2WdL+fDbnUYvdXVd1AUW4LpKQ9Pd7Qr5gkP7TsRITRMPxzmeeBQ7KVHp4k4TwhqUG9UAA/ZXqQfuNPMj7TUxd4x7oHV7K4l01kRi/S1UZU3heRosyqdhPML/U9f6rYtWPrTxeo0WndzCC/fxug+TKN5zv6mgCMKMn4fP+/fa2hRXwTucwb2M73WjkOZFN+vlk0+6UxvDcHvqoqkoxSiTFv9j6qSlC+O7aUpy714USqG8Z2sE3kiLyjW1g1rdhQHWTMcxOmpHImMr49dYPJevDm5s9SFaP5OpzaoYvBV/VGJWGEtQ8X32ad90vGA+LXYdo1Hgk6ecFYjLJekKkt0aqWmll9BWGynHBRDibSvZMDiFbO4pQmgQR1eiLzjjw2OZo1Gfusvuz7P6uUf6q7x1RdapLU871TYO2EYHtsZ3T50rGuWc0XrPIEjrB+KQd74EHjV8GE3tRkb8DDQ1xwF7l6tkVM6iI7inazWu1CZV5HFs51bm+81tgTj+ZT2gl3LPm8Vv9Q92Os0OsfDMw09KeHC6/ssw+pOofxC/UGNyEP03gn8Lcv9dZDBI+c3sHeh4jK1LF1XxGBktjAydiJywFQ=
-  on:
-    tags: true

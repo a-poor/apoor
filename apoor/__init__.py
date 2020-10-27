@@ -12,44 +12,43 @@ import itertools as it
 import numpy as np
 from . import data
 
+from typing import Any, List, Callable
 
 
-def fdir(o=None):
-    """Same as builtin dir() without private attributes.    
+def fdir(o: Any) -> List[str]:
+    """Filtered dir(). Same as builtin dir()
+    function without private attributes.
+
+    :param o: Object being inspected
+    :return: "Public attributes" of o
     """
-    if o is None: d = dir()
-    else: d = dir(o)
-    return [a for a in d if a[0] != "_"]
-    
-
-
-
+    return [a for a in dir(o) if a[0] != "_"]
 
 def set_seed(n:int):
     """Sets numpy's random seed.
 
-    Args:
-        n (int): The value used to set numpy's random seed.
+    :param n: The value used to set numpy's random seed.
+    :type n: int
     """
     np.random.seed(n)
 
 
-def make_scale(dmin:float,dmax:float,rmin:float,rmax:float,clamp:bool=False):
+def make_scale(dmin:float,dmax:float,rmin:float,rmax:float,clamp:bool=False) -> Callable[[float],float]:
     """Scale function factory.
     
     Creates a scale function to map a number from a domain to a range.
 
-    Args:
-        dmin (float): Domain's start value
-        dmax (float): Domain's end value
-        rmin (float): Range's start value
-        rmax (float): Range's end value
-        clamp (bool): If the result is outside the range, return clamped value (default: False)
-    Returns:
-        A scale function taking one numeric argument and returns the value mapped from the domain to the range (and clamped if `clamp` flag is set).
+    :param dmin: Domain's start value
+    :param dmax: Domain's end value
+    :param rmin: Range's start value
+    :param rmax: Range's end value
+    :param clamp: If the result is outside the range, return 
+        clamped value (default: False)
+    :return: A scale function taking one numeric argument and 
+        returns the value mapped from the domain to the range 
+        (and clamped if `clamp` flag is set).
 
-        For example:
-        
+    Examples:
         >>> s = make_scale(0,1,0,10)
         >>> s(0.1)
         1.0
@@ -111,7 +110,7 @@ def train_test_split(*arrays,test_pct:float=0.15,val_set:bool=False,val_pct:floa
         If `val_set == False`, `len(splits) == 2 * len(arrays)`,
         or if `val_set == True`, `len(splits) == 3 * len(arrays)`.
 
-        For example:
+    For example:
         >>> x = np.arange(10)
         >>> train_test_split(x)
         (array([3, 9, 4, 2, 1, 0, 7, 5, 8]), array([6]))

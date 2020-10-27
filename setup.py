@@ -7,7 +7,7 @@ with open("README.md") as f:
 # cmdclass = {'build_sphinx': BuildDoc}
 
 name = 'apoor'
-version = "1.1.7"
+version = "1.1.8"
 release = version
 
 setuptools.setup(

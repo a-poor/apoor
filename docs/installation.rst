@@ -10,6 +10,7 @@ Requirements
 
 Installation
 -------------
-Installing with ``pip``:: console
+Installing with ``pip``
+::
     $ pip install apoor
 

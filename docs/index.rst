@@ -6,14 +6,20 @@
 Welcome to ``apoor``'s documentation!
 =====================================
 
+
+.. include:: installation.rst 
+
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 4
+   :caption: Module Contents:
+   
+   apoor
 
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`

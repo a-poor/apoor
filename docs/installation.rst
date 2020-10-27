@@ -1,9 +1,15 @@
-============
-Installation
-============
+============================
+Requirements & Installation
+============================
 
-Prerequisites
+Requirements
 -------------
- * Python interpreter
- * Adjust your path
- * Packaging tools
+ * ``python>=3.6``
+ * ``pandas``
+
+
+Installation
+-------------
+Installing with ``pip``:: console
+    $ pip install apoor
+

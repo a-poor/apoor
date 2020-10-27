@@ -3,15 +3,15 @@ import setuptools
 with open("README.md") as f:
     long_description = f.read()
 
-from sphinx.setup_command import BuildDoc
-cmdclass = {'build_sphinx': BuildDoc}
+# from sphinx.setup_command import BuildDoc
+# cmdclass = {'build_sphinx': BuildDoc}
 
-name = 'My project'
+name = 'apoor'
 version = "1.1.6"
 release = version
 
 setuptools.setup(
-    name="apoor",
+    name=name,
     version=version,
     author="Austin Poor",
     author_email="a-poor@users.noreply.github.com",
@@ -35,10 +35,10 @@ setuptools.setup(
       ],
     python_requires=">=3.6",
     zip_safe=False,
-    command_options={
-        'build_sphinx': {
-            'project': ('setup.py', name),
-            'version': ('setup.py', version),
-            'release': ('setup.py', release),
-            'source_dir': ('setup.py', 'doc')}},
+    # command_options={
+    #     'build_sphinx': {
+    #         'project': ('setup.py', name),
+    #         'version': ('setup.py', version),
+    #         'release': ('setup.py', release),
+    #         'source_dir': ('setup.py', 'doc')}},
 )

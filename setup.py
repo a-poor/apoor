@@ -7,7 +7,7 @@ from sphinx.setup_command import BuildDoc
 cmdclass = {'build_sphinx': BuildDoc}
 
 name = 'My project'
-version = "1.1.5"
+version = "1.1.6"
 release = version
 
 setuptools.setup(

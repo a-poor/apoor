@@ -18,8 +18,8 @@ Inspired by Hillary Parker's [blog post](https://hilaryparker.com/2013/04/03/per
 ## Links
 
 * GitHub Repo: https://github.com/a-poor/apoor
-* PyPi Package: https://pypi.org/project/apoor/
-* Documentation: https://apoor.readthedocs.io/en/latest/
+* PyPi Package: https://pypi.org/project/apoor
+* Documentation: https://apoor.readthedocs.io/en/latest
 
 ## Installation Instructions
 

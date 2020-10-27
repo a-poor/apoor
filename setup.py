@@ -3,9 +3,16 @@ import setuptools
 with open("README.md") as f:
     long_description = f.read()
 
+from sphinx.setup_command import BuildDoc
+cmdclass = {'build_sphinx': BuildDoc}
+
+name = 'My project'
+version = "1.1.5"
+release = version
+
 setuptools.setup(
     name="apoor",
-    version="1.1.5",
+    version=version,
     author="Austin Poor",
     author_email="a-poor@users.noreply.github.com",
     description="A small personal package created to store code and data I often reuse.",
@@ -27,5 +34,11 @@ setuptools.setup(
         "pandas",
       ],
     python_requires=">=3.6",
-    zip_safe=False
+    zip_safe=False,
+    command_options={
+        'build_sphinx': {
+            'project': ('setup.py', name),
+            'version': ('setup.py', version),
+            'release': ('setup.py', release),
+            'source_dir': ('setup.py', 'doc')}},
 )

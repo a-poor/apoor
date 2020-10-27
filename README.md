@@ -13,8 +13,11 @@ _created by Austin Poor_
 
 A small personal package created to store code and data I often reuse.
 
+Inspired by Hillary Parker's [blog post](https://hilaryparker.com/2013/04/03/personal-r-packages/) about personal R packages.
+
 ## Links
 
+* GitHub Repo: https://github.com/a-poor/apoor
 * PyPi Package: https://pypi.org/project/apoor/
 * Documentation: https://apoor.readthedocs.io/en/latest/
 

@@ -15,6 +15,8 @@ A small personal package created to store code and data I often reuse.
 
 Inspired by Hillary Parker's [blog post](https://hilaryparker.com/2013/04/03/personal-r-packages/) about personal R packages.
 
+I'm also using it to 
+
 ## Links
 
 * GitHub Repo: https://github.com/a-poor/apoor
@@ -26,3 +28,9 @@ Inspired by Hillary Parker's [blog post](https://hilaryparker.com/2013/04/03/per
 ```bash
 $ pip install apoor
 ```
+
+***
+
+I'd love to know if you use this package or have any suggestions for things to add!
+
+

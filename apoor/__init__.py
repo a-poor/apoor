@@ -168,10 +168,11 @@ def to_onehot(y: np.ndarray, num_classes: int = None, dtype="float32") -> np.nda
 
     :param y: 1D categorical vector
     :param num_classes: Number of categories in (and width of) 
-        the output matrix. If ``num_classes`` is ``None`, sets
-        to ``max(y) + 1``.
+        the output matrix. 
+
+        If ``num_classes`` is ``None``, setsto ``max(y) + 1``.
     :param dtype: Data type of output matrix
-    :returns: 2D one-hot encoded matrix
+    :returns: 2D one-hot encoded category matrix
     
     Examples:
         >>> data = np.array([0,2,1,3])

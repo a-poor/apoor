@@ -12,7 +12,7 @@ import itertools as it
 import numpy as np
 from . import data
 
-from typing import Any, List, Callable
+from typing import Any, List, Callable, Tuple
 
 
 def fdir(o: Any) -> List[str]:
@@ -71,46 +71,39 @@ def make_scale(dmin:float,dmax:float,rmin:float,rmax:float,clamp:bool=False) -> 
     return scale
     
 
-def train_test_split(*arrays,test_pct:float=0.15,val_set:bool=False,val_pct:float=0.15):
+def train_test_split(*arrays, test_pct: float = 0.15, val_set: bool = False, val_pct: float = 0.15) -> Tuple[np.ndarray]:
     """Splits arrays into train & test sets.
 
     Splits arrays into train, test, and (optionally) validation sets using the supplied percentages.
 
-    Args:
-        *arrays: 
-            An arbitrary number of sequences to be split
-            into train, test, and (optionally) validation 
-            sets. Must have at least one array.
-
-        test_pct: 
-            Float of the range [0,1]
-            Percent of total n values to include in test set.
-            
-            The train set will have `1.0 - test_pct` pct of
-            values (or `1.0 - test_pct - val_pct` pct of values
-            if `val_set == True`).
-
-        val_set:  
-            Whether or not to return a validation set,
-            in addition to a test set.
-
-        val_pct: 
-            float of the range [0,1]
-            Percent of total n values to include in test set.
-            
-            Ignored if `val_set == False`.
-            
-            The train set will have `1.0 - test_pct - val_pct` 
-            pct of values.
-
-    Returns:
-        splits: tuple of numpy arrays
-        Input arrays split into train, test, val sets.
+    :param *arrays: An arbitrary number of sequences to be split
+        into train, test, and (optionally) validation sets. Must 
+        have at least one array.
+    :param test_pct: Float in the range ``[0,1]``. Percent of total 
+        ``n`` values to include in test set.
         
-        If `val_set == False`, `len(splits) == 2 * len(arrays)`,
-        or if `val_set == True`, `len(splits) == 3 * len(arrays)`.
+        The train set will have `1.0 - test_pct` pct of
+        values (or `1.0 - test_pct - val_pct` pct of values
+        if `val_set == True`).
 
-    For example:
+    :param val_set: Whether or not to return a validation set,
+        in addition to a test set.
+
+    :param val_pct: `float` in the range ``[0,1]``. Percent 
+        of total n values to include in test set.
+        
+        Ignored if ``val_set == False``.
+        
+        The train set will have ``1.0 - test_pct - val_pct`` 
+        pct of values.
+
+    :returns: splits tuple of numpy arrays. Input arrays 
+        split into train, test, val sets.
+        
+        If ``val_set == False``, ``len(splits) == 2 * len(arrays)``,
+        or if ``val_set == True``, ``len(splits) == 3 * len(arrays)``.
+
+    Example:
         >>> x = np.arange(10)
         >>> train_test_split(x)
         (array([3, 9, 4, 2, 1, 0, 7, 5, 8]), array([6]))
@@ -167,4 +160,30 @@ def train_test_split(*arrays,test_pct:float=0.15,val_set:bool=False,val_pct:floa
             for a in map(np.asarray,arrays)
         )
     return tuple(it.chain(*splits))
+
+
+def to_onehot(y: np.ndarray, num_classes: int = None, dtype="float32") -> np.ndarray:
+    """Expands a 1D categorical vector to
+    a 2D, onehot-encoded categorical matrix.
+
+    :param y: 1D categorical vector
+    :param num_classes: Number of categories in (and width of) 
+        the output matrix. If ``num_classes`` is ``None`, sets
+        to ``max(y) + 1``.
+    :param dtype: Data type of output matrix
+    :returns: 2D one-hot encoded matrix
+    
+    Examples:
+        >>> data = np.array([0,2,1,3])
+        >>> apoor.to_onehot(data)
+        array([[1., 0., 0., 0.],
+               [0., 0., 1., 0.],
+               [0., 1., 0., 0.],
+               [0., 0., 0., 1.]])
+
+    """
+    if num_classes is None:
+        num_classes = np.max(y) + 1
+    return np.identity(num_classes,dtype=dtype)[y]
+
 

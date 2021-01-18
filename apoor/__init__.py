@@ -206,6 +206,14 @@ def ibuff(itr: Iterable, bsize: int = 1) -> Iterable[List]:
         of size up to ``bsize``.
     :raises TypeError: If ``bsize`` isn't an integer.
     :raises ValueError: If ``bsize`` isn't positive.
+    
+    Examples:
+        >>> for b in apoor.ibuff(range(10),3):
+        ...     print(b)
+        [0, 1, 2]
+        [3, 4, 5]
+        [6, 7, 8]
+        [9]
     """
     # Perform checks
     if not isinstance(bsize,int):

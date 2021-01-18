@@ -12,7 +12,7 @@ import itertools as it
 import numpy as np
 from . import data
 
-from typing import Any, List, Callable, Tuple
+from typing import Any, List, Callable, Tuple, Iterable
 
 
 def fdir(o: Any) -> List[str]:

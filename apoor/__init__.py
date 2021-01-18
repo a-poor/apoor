@@ -218,7 +218,7 @@ def ibuff(itr: Iterable, bsize: int = 1) -> Iterable[List]:
     # Perform checks
     if not isinstance(bsize,int):
         raise TypeError("bsize needs to be a positive integer.")
-    if bsize <= 1:
+    if bsize < 1:
         raise ValueError("bsize needs to be a positive integer.")
     # Initialize the buffer
     buff = []

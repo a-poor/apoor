@@ -1,5 +1,7 @@
 
 import apoor
+import pytest
+
 
 def test_make_scale():
     assert apoor.make_scale(0,1,0,10)(0.1) == 1
@@ -57,3 +59,14 @@ def test_train_test_split():
         (result[4] == z_train).all() and 
         (result[5] == z_test ).all() 
     )
+
+def test_ibuff():
+    assert list(ibuff(range(10))) == [[i] for i in range(10)]
+    assert list(ibuff(range(10),2)) == [[i,i+1] for i in range(0,10,2)]
+    with pytest.raises(TypeError) as e_info:
+        apoor.ibuff(range(10),1.0)    
+    with pytest.raises(ValueError) as e_info:
+        apoor.ibuff(range(10),0)    
+
+
+

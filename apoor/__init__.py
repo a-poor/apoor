@@ -188,3 +188,41 @@ def to_onehot(y: np.ndarray, num_classes: int = None, dtype="float32") -> np.nda
     return np.identity(num_classes,dtype=dtype)[y]
 
 
+def ibuff(itr: Iterable, bsize: int = 1) -> Iterable[List]:
+    """Creates an iterable that yields elements
+    from ``itr`` grouped into lists of size ``bsize``.
+
+    If ``itr`` can't evenly be grouped into lists of size
+    ``bsize``, the final list will have the remaining
+    elements.
+
+    :param itr: The interable to be buffered.
+    :param bsize: Positive integer, representing the number of
+        values from ``itr`` to be yielded together.
+
+        The final list yielded may not be of size ``bsize`` if
+        ``len(itr)`` doesn't evenly divide into groups of ``bsize``.
+    :yields: Buffered elements from ``itr``, grouped into lists
+        of size up to ``bsize``.
+    :raises TypeError: If ``bsize`` isn't an integer.
+    :raises ValueError: If ``bsize`` isn't positive.
+    """
+    # Perform checks
+    if not isinstance(bsize,int):
+        raise TypeError("bsize needs to be a positive integer.")
+    if bsize <= 1:
+        raise ValueError("bsize needs to be a positive integer.")
+    # Initialize the buffer
+    buff = []
+    for v in itr:
+        if len(buff) < bsize: # If buff not full, append
+            buff.append(v)
+        else:                 # Otherwise yield and reinit
+            yield buff
+            buff = [v]
+    # Check if there's anything left in the buffer
+    if len(buff) > 0:
+        yield buff
+
+
+

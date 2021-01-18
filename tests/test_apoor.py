@@ -66,9 +66,9 @@ def test_ibuff():
     assert list(apoor.ibuff(range(10),2)) == \
         [[i,i+1] for i in range(0,10,2)]
     with pytest.raises(TypeError) as e_info:
-        apoor.ibuff(range(10),1.0)    
+        list(apoor.ibuff(range(10),1.0))    
     with pytest.raises(ValueError) as e_info:
-        apoor.ibuff(range(10),0)    
+        list(apoor.ibuff(range(10),0))
 
 
 
